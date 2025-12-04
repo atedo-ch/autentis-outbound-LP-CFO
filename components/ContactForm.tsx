@@ -51,26 +51,26 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <div id="contact" className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12">
-      <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-2">Gespräch mit Bernhard Kurth buchen</h3>
-        <p className="text-slate-600 text-sm">Finden Sie heraus, wie viel Sie sparen können.</p>
+    <div id="contact" className="contact-card">
+      <div className="contact-header">
+        <h3 className="contact-title">Gespräch mit Bernhard Kurth buchen</h3>
+        <p className="contact-subtitle">Finden Sie heraus, wie viel Sie sparen können.</p>
       </div>
 
       {status === 'success' ? (
-        <div className="flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-300">
-          <CheckCircle className="text-green-500 w-16 h-16 mb-4" />
-          <h4 className="text-xl font-bold text-slate-900 mb-2">Anfrage erhalten!</h4>
-          <p className="text-slate-600">Wir werden uns umgehend bei Ihnen melden.</p>
-          <Button variant="outline" className="mt-6" onClick={() => setStatus('idle')}>
+        <div className="success-message">
+          <CheckCircle className="success-icon" />
+          <h4 className="contact-title">Anfrage erhalten!</h4>
+          <p className="contact-subtitle">Wir werden uns umgehend bei Ihnen melden.</p>
+          <Button variant="outline" className="mt-6" onClick={() => setStatus('idle')} style={{ marginTop: '1.5rem' }}>
             Neue Anfrage senden
           </Button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">Vorname *</label>
+        <form onSubmit={handleSubmit} className="form-stack">
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="firstName">Vorname *</label>
               <input
                 type="text"
                 id="firstName"
@@ -78,13 +78,13 @@ export const ContactForm: React.FC = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 disabled={status === 'submitting'}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all disabled:opacity-50 disabled:bg-gray-100"
+                className="form-input"
                 placeholder="Ihr Vorname"
                 required
               />
             </div>
-            <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">Nachname *</label>
+            <div className="form-group">
+              <label htmlFor="lastName">Nachname *</label>
               <input
                 type="text"
                 id="lastName"
@@ -92,16 +92,16 @@ export const ContactForm: React.FC = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 disabled={status === 'submitting'}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all disabled:opacity-50 disabled:bg-gray-100"
+                className="form-input"
                 placeholder="Ihr Nachname"
                 required
               />
             </div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">E-Mail *</label>
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="email">E-Mail *</label>
               <input
                 type="email"
                 id="email"
@@ -109,13 +109,13 @@ export const ContactForm: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 disabled={status === 'submitting'}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all disabled:opacity-50 disabled:bg-gray-100"
+                className="form-input"
                 placeholder="name@unternehmen.ch"
                 required
               />
             </div>
-            <div>
-              <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">Unternehmen</label>
+            <div className="form-group">
+              <label htmlFor="company">Unternehmen</label>
               <input
                 type="text"
                 id="company"
@@ -123,14 +123,14 @@ export const ContactForm: React.FC = () => {
                 value={formData.company}
                 onChange={handleChange}
                 disabled={status === 'submitting'}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all disabled:opacity-50 disabled:bg-gray-100"
+                className="form-input"
                 placeholder="Firmenname AG"
               />
             </div>
           </div>
 
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Nachricht (Optional)</label>
+          <div className="form-group">
+            <label htmlFor="message">Nachricht (Optional)</label>
             <textarea
               id="message"
               name="message"
@@ -138,14 +138,14 @@ export const ContactForm: React.FC = () => {
               onChange={handleChange}
               disabled={status === 'submitting'}
               rows={3}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all disabled:opacity-50 disabled:bg-gray-100"
+              className="form-input"
               placeholder="Wie können wir Ihnen helfen?"
             ></textarea>
           </div>
 
           {status === 'error' && (
-             <div className="flex items-center text-red-600 text-sm bg-red-50 p-3 rounded">
-               <AlertCircle size={16} className="mr-2" />
+             <div className="error-box">
+               <AlertCircle size={16} style={{ marginRight: '0.5rem' }} />
                Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder schreiben Sie uns direkt.
              </div>
           )}
@@ -154,18 +154,18 @@ export const ContactForm: React.FC = () => {
             type="submit" 
             fullWidth 
             disabled={status === 'submitting'}
-            className="py-4 text-lg shadow-lg shadow-blue-900/10 flex items-center justify-center gap-2"
+            className="btn-lg"
           >
             {status === 'submitting' ? (
-              <>
-                <Loader2 className="animate-spin" size={20} />
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Loader2 className="spin" size={20} />
                 Wird gesendet...
-              </>
+              </span>
             ) : (
               'Kostenlos anfragen'
             )}
           </Button>
-          <p className="text-xs text-center text-slate-400 mt-4">
+          <p className="text-center" style={{ fontSize: '0.75rem', color: 'var(--slate-400)', marginTop: '1rem' }}>
             Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.
           </p>
         </form>

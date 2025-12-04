@@ -70,15 +70,15 @@ export const ROICalculator: React.FC = () => {
   const formatCHF = (val: number) => `CHF ${val.toLocaleString('de-CH')}`;
 
   return (
-    <div id="roi-calculator" className="bg-white p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-100 max-w-lg mx-auto w-full">
-      <h2 className="text-2xl font-bold text-slate-900 mb-6">Ihr ROI transparent berechnet</h2>
+    <div id="roi-calculator" className="roi-calculator">
+      <h2 className="roi-title">Ihr ROI transparent berechnet</h2>
       
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="space-y-4">
+      <form onSubmit={handleSubmit} className="roi-form-stack">
+        <div className="roi-form-stack">
           <div>
-            <label htmlFor="positions" className="flex justify-between text-sm font-semibold text-slate-900 mb-2">
+            <label htmlFor="positions" className="roi-label-row">
               <span>Führungspositionen pro Jahr</span>
-              <span className="text-blue-600">{positions} Positionen</span>
+              <span className="roi-label-value">{positions} Positionen</span>
             </label>
             <input 
               type="range" 
@@ -87,12 +87,12 @@ export const ROICalculator: React.FC = () => {
               max="20" 
               value={positions}
               onChange={(e) => setPositions(parseInt(e.target.value))}
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              className="roi-range"
             />
           </div>
 
           <div>
-            <label htmlFor="salary" className="block text-sm font-semibold text-slate-900 mb-2">
+            <label htmlFor="salary" className="roi-label-row" style={{ display: 'block', marginBottom: '0.5rem' }}>
               ⌀ Jahresgehalt Führungskraft (CHF)
             </label>
             <input 
@@ -101,14 +101,14 @@ export const ROICalculator: React.FC = () => {
               value={salary}
               onChange={(e) => setSalary(parseInt(e.target.value) || 0)}
               step="10000"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+              className="form-input"
             />
           </div>
 
           <div>
-            <label htmlFor="turnover" className="flex justify-between text-sm font-semibold text-slate-900 mb-2">
+            <label htmlFor="turnover" className="roi-label-row">
               <span>Aktuelle Fehlbesetzungsquote (%)</span>
-              <span className="text-blue-600">{turnover}%</span>
+              <span className="roi-label-value">{turnover}%</span>
             </label>
             <input 
               type="range" 
@@ -117,70 +117,71 @@ export const ROICalculator: React.FC = () => {
               max="30" 
               value={turnover}
               onChange={(e) => setTurnover(parseInt(e.target.value))}
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              className="roi-range"
             />
           </div>
         </div>
 
         {/* Results Box */}
-        <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
-          <div className="p-4 border-b border-slate-200">
-             <h3 className="text-sm font-bold text-red-600 uppercase tracking-wider mb-3">Die Investition</h3>
-             <div className="flex justify-between text-sm mb-2">
-               <span className="text-slate-600">Management Audits</span>
-               <span className="font-medium text-slate-900">{formatCHF(metrics.auditCost)}</span>
+        <div className="roi-results-box">
+          <div className="roi-results-header">
+             <h3 className="roi-subheading text-red">Die Investition</h3>
+             <div className="roi-row">
+               <span style={{ color: 'var(--slate-600)' }}>Management Audits</span>
+               <span style={{ fontWeight: 500 }}>{formatCHF(metrics.auditCost)}</span>
              </div>
-             <div className="flex justify-between text-sm pt-2 border-t border-slate-200">
-               <span className="font-bold text-slate-900">Total Investment</span>
-               <span className="font-bold text-red-600">{formatCHF(metrics.totalInvestment)}</span>
+             <div className="roi-total-row">
+               <span>Total Investment</span>
+               <span className="text-red">{formatCHF(metrics.totalInvestment)}</span>
              </div>
           </div>
 
-          <div className="p-4 bg-gradient-to-br from-green-600 to-green-700 text-white">
-            <h3 className="text-sm font-bold text-green-100 uppercase tracking-wider mb-3">Ihr Nutzen (3 Jahre)</h3>
-            <div className="space-y-2 text-sm mb-4 opacity-90">
-              <div className="flex justify-between">
+          <div className="roi-results-body">
+            <h3 className="roi-subheading text-green-light">Ihr Nutzen (3 Jahre)</h3>
+            <div style={{ marginBottom: '1rem' }}>
+              <div className="roi-body-row">
                 <span>Verhinderte Fehlbesetzungen</span>
-                <span className="font-medium">{formatCHF(metrics.savings)}</span>
+                <span style={{ fontWeight: 500 }}>{formatCHF(metrics.savings)}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="roi-body-row">
                 <span>Produktivitätssteigerung</span>
-                <span className="font-medium">{formatCHF(metrics.productivityGain)}</span>
+                <span style={{ fontWeight: 500 }}>{formatCHF(metrics.productivityGain)}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="roi-body-row">
                 <span>Time-to-Productivity</span>
-                <span className="font-medium">{formatCHF(metrics.ttpGain)}</span>
+                <span style={{ fontWeight: 500 }}>{formatCHF(metrics.ttpGain)}</span>
               </div>
             </div>
             
-            <div className="bg-white/10 rounded-lg p-3 mb-2">
-              <div className="flex justify-between items-center">
-                <span className="font-semibold text-sm">Netto-Vorteil</span>
-                <span className="font-bold text-xl">{formatCHF(metrics.netBenefit)}</span>
+            <div className="roi-net-box">
+              <div className="roi-net-row">
+                <span style={{ fontWeight: 600, fontSize: '0.875rem' }}>Netto-Vorteil</span>
+                <span style={{ fontWeight: 700, fontSize: '1.25rem' }}>{formatCHF(metrics.netBenefit)}</span>
               </div>
             </div>
             
-            <div className="flex justify-between items-end">
-              <span className="font-semibold text-sm opacity-80">Return on Investment</span>
-              <span className="font-bold text-3xl">{metrics.roi}%</span>
+            <div className="roi-roi-row">
+              <span style={{ fontWeight: 600, fontSize: '0.875rem', opacity: 0.8 }}>Return on Investment</span>
+              <span style={{ fontWeight: 700, fontSize: '1.875rem' }}>{metrics.roi}%</span>
             </div>
           </div>
         </div>
 
-        <p className="text-center text-xs text-slate-500 italic">
+        <p className="roi-footer-note">
           Eine verhinderte Fehlbesetzung bezahlt bereits die gesamte Investition.
         </p>
 
-        <div className="flex gap-2">
+        <div className="roi-email-row">
           <input 
             type="email" 
             placeholder="Ihre E-Mail für Details" 
             required 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-sm"
+            className="form-input"
+            style={{ flex: 1 }}
           />
-          <Button type="submit" className="whitespace-nowrap px-4">
+          <Button type="submit" style={{ whiteSpace: 'nowrap', padding: '0.75rem 1rem' }}>
             Analyse senden
           </Button>
         </div>

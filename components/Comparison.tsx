@@ -8,76 +8,92 @@ export const Comparison: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
+    <section className="comparison-section">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">
             Vom Kostenrisiko zum strategischen Investment
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Der Unterschied zwischen intuitiver Auswahl und diagnostischer Präzision in Zahlen.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <div className="comparison-grid">
           {/* Risk Side */}
-          <div className="p-8 rounded-2xl bg-red-50/50 border border-red-100">
-            <h3 className="text-xl font-bold text-red-900 mb-6 flex items-center">
-              <span className="w-2 h-2 rounded-full bg-red-500 mr-3"></span>
+          <div className="comparison-card risk">
+            <h3 className="comparison-card-title">
+              <span className="indicator-dot"></span>
               Traditionelle Auswahl
             </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <XCircle className="text-red-500 mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-slate-700">Hohes Risiko für "False Positives" (Blender)</span>
+            <ul className="comparison-list">
+              <li className="comparison-item">
+                <div className="comparison-icon-wrapper">
+                  <XCircle className="comparison-icon" size={20} />
+                </div>
+                <span className="comparison-text">Hohes Risiko für "False Positives" (Blender)</span>
               </li>
-              <li className="flex items-start">
-                <XCircle className="text-red-500 mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-slate-700">Versteckte Kosten durch Fluktuation</span>
+              <li className="comparison-item">
+                <div className="comparison-icon-wrapper">
+                   <XCircle className="comparison-icon" size={20} />
+                </div>
+                <span className="comparison-text">Versteckte Kosten durch Fluktuation</span>
               </li>
-              <li className="flex items-start">
-                <XCircle className="text-red-500 mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-slate-700">Lange Einarbeitungszeiten (Kostenfalle)</span>
+              <li className="comparison-item">
+                <div className="comparison-icon-wrapper">
+                   <XCircle className="comparison-icon" size={20} />
+                </div>
+                <span className="comparison-text">Lange Einarbeitungszeiten (Kostenfalle)</span>
               </li>
-              <li className="flex items-start">
-                <XCircle className="text-red-500 mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-slate-700">Entscheidung basierend auf Bauchgefühl</span>
+              <li className="comparison-item">
+                <div className="comparison-icon-wrapper">
+                   <XCircle className="comparison-icon" size={20} />
+                </div>
+                <span className="comparison-text">Entscheidung basierend auf Bauchgefühl</span>
               </li>
             </ul>
           </div>
 
           {/* Benefit Side */}
-          <div className="p-8 rounded-2xl bg-green-50/50 border border-green-100 relative shadow-lg ring-1 ring-green-200">
-            <div className="absolute top-0 right-0 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+          <div className="comparison-card benefit">
+            <div className="comparison-tag">
               Empfohlen
             </div>
-            <h3 className="text-xl font-bold text-green-900 mb-6 flex items-center">
-              <span className="w-2 h-2 rounded-full bg-green-500 mr-3"></span>
+            <h3 className="comparison-card-title">
+              <span className="indicator-dot"></span>
               Mit Autentis Diagnostik
             </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <CheckCircle className="text-green-600 mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-slate-800 font-medium">98% Prognosesicherheit bei Besetzungen</span>
+            <ul className="comparison-list">
+              <li className="comparison-item">
+                <div className="comparison-icon-wrapper">
+                  <CheckCircle className="comparison-icon" size={20} />
+                </div>
+                <span className="comparison-text">98% Prognosesicherheit bei Besetzungen</span>
               </li>
-              <li className="flex items-start">
-                <CheckCircle className="text-green-600 mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-slate-800 font-medium">Sofortiger ROI durch Leistungsträger</span>
+              <li className="comparison-item">
+                <div className="comparison-icon-wrapper">
+                   <CheckCircle className="comparison-icon" size={20} />
+                </div>
+                <span className="comparison-text">Sofortiger ROI durch Leistungsträger</span>
               </li>
-              <li className="flex items-start">
-                <CheckCircle className="text-green-600 mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-slate-800 font-medium">Objektive, auditsichere Entscheidung</span>
+              <li className="comparison-item">
+                <div className="comparison-icon-wrapper">
+                   <CheckCircle className="comparison-icon" size={20} />
+                </div>
+                <span className="comparison-text">Objektive, auditsichere Entscheidung</span>
               </li>
-              <li className="flex items-start">
-                <CheckCircle className="text-green-600 mt-1 mr-3 flex-shrink-0" size={20} />
-                <span className="text-slate-800 font-medium">Nachhaltige kulturelle Passung</span>
+              <li className="comparison-item">
+                <div className="comparison-icon-wrapper">
+                   <CheckCircle className="comparison-icon" size={20} />
+                </div>
+                <span className="comparison-text">Nachhaltige kulturelle Passung</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 text-center">
-          <Button onClick={scrollToContact} className="px-8 py-4 shadow-xl shadow-blue-900/10">
+        <div className="comparison-cta">
+          <Button onClick={scrollToContact} className="btn-lg">
             Risiko jetzt minimieren – Demo vereinbaren
           </Button>
         </div>

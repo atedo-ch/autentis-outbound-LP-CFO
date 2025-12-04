@@ -41,37 +41,39 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm py-3' : 'bg-white py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <a href="#" onClick={(e) => handleNavClick(e, '#')} className="flex items-center group">
-              <Logo className="h-12 w-auto transition-transform duration-300 group-hover:scale-[1.02]" />
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container">
+        <div className="header-content">
+          <div className="logo-wrapper">
+            <a href="#" onClick={(e) => handleNavClick(e, '#')}>
+              <Logo className="main-logo" />
             </a>
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a 
-                key={item.label} 
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
-              >
-                {item.label}
-              </a>
-            ))}
+          <nav className="nav-desktop">
+            <div className="nav-desktop-links">
+              {navItems.map((item) => (
+                <a 
+                  key={item.label} 
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="nav-link"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
             <Button onClick={scrollToContact} size="sm">
               Erstgespräch vereinbaren
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-600 hover:text-slate-900 p-2"
+              className="menu-toggle"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,13 +84,13 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-lg py-4 px-4 flex flex-col space-y-4">
+        <div className="mobile-menu">
           {navItems.map((item) => (
             <a 
               key={item.label} 
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-base font-medium text-slate-600 hover:text-slate-900 block py-2 cursor-pointer"
+              className="mobile-nav-link"
             >
               {item.label}
             </a>

@@ -8,11 +8,12 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({ className = '', withSubtitle = true }) => {
   return (
     <svg 
-      viewBox="0 0 300 80" 
+      viewBox="0 0 360 85" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg" 
       className={className}
       aria-label="Autentis Logo"
+      role="img"
     >
       {/* Icon: Yellow Triangle */}
       <path 
@@ -23,27 +24,26 @@ export const Logo: React.FC<LogoProps> = ({ className = '', withSubtitle = true 
       {/* Main Text: autentis */}
       <text 
         x="80" 
-        y="52" 
-        fontFamily="Inter, sans-serif" 
-        fontWeight="bold" 
+        y="54" 
+        fontFamily="'Inter', sans-serif" 
+        fontWeight="700" 
         fontSize="56" 
         fill="#2E3A8C"
-        letterSpacing="-1"
+        letterSpacing="-2"
       >
         autentis
       </text>
-      <circle cx="288" cy="18" r="6" fill="#2E3A8C" />
 
       {/* Subtitle: talent acquisition & development */}
       {withSubtitle && (
         <text 
           x="82" 
-          y="74" 
-          fontFamily="Inter, sans-serif" 
+          y="76" 
+          fontFamily="'Inter', sans-serif" 
           fontWeight="400" 
           fontSize="14" 
           fill="#2E3A8C"
-          letterSpacing="0.5"
+          letterSpacing="0.2"
         >
           talent acquisition &amp; development
         </text>

@@ -11,7 +11,7 @@ import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+    <div className="app-wrapper">
       <Header />
       
       <main>

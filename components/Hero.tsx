@@ -9,46 +9,46 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
+    <section className="hero-section">
       {/* Background Image & Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="hero-bg-wrapper">
         <img 
           src="generated_image_0.png" 
           alt="Professionelles Business-Gespräch in modernem Büro" 
-          className="w-full h-full object-cover"
+          className="hero-bg-image"
         />
-        <div className="absolute inset-0 bg-white/90 lg:bg-gradient-to-r lg:from-white lg:via-white/90 lg:to-white/40"></div>
+        <div className="hero-overlay"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+      <div className="container hero-container">
+        <div className="hero-grid">
           
-          <div className="lg:col-span-6 text-left mb-12 lg:mb-0">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-50 text-green-700 text-xs font-semibold tracking-wide uppercase mb-6 border border-green-200">
-              <TrendingUp size={14} className="mr-2" />
+          <div className="hero-text-col">
+            <div className="hero-badge">
+              <TrendingUp size={14} style={{ marginRight: '0.5rem' }} />
               Amortisation meist &lt; 6 Monate
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Investitionsschutz für Ihr <span className="text-blue-700">Personalbudget</span>.
+            <h1 className="hero-title">
+              Investitionsschutz für Ihr <span>Personalbudget</span>.
             </h1>
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl">
+            <p className="hero-description">
               Fehlbesetzungen kosten Sie zwischen 30.000 und 130.000 CHF. Minimieren Sie finanzielle Risiken und sichern Sie Ihren ROI durch wissenschaftlich fundierte Eignungsdiagnostik.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="px-8 py-4 text-lg" onClick={scrollToContact}>
+            <div className="hero-actions">
+              <Button className="btn-lg" onClick={scrollToContact}>
                 Termin vereinbaren
               </Button>
             </div>
 
-            <p className="mt-6 text-sm text-slate-500 flex items-center">
-              <CheckCircle size={16} className="text-green-600 mr-2" />
+            <p className="hero-trust">
+              <CheckCircle size={16} color="var(--green-600)" />
               Wissenschaftlich validiert & datengestützt
             </p>
           </div>
 
-          <div className="lg:col-span-6 relative flex justify-center lg:justify-end">
+          <div className="hero-calc-col">
             <ROICalculator />
           </div>
         </div>

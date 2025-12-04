@@ -27,16 +27,16 @@ const benefits: BenefitProps[] = [
 
 export const Benefits: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-50" id="vorteile">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="benefits-section" id="vorteile">
+      <div className="container">
+        <div className="benefits-grid">
           {benefits.map((item, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 text-blue-700">
+            <div key={index} className="benefit-card">
+              <div className="benefit-icon-wrapper">
                 <item.Icon size={24} />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+              <h3 className="benefit-title">{item.title}</h3>
+              <p className="benefit-desc">
                 {item.description}
               </p>
             </div>
