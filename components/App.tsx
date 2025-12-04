@@ -1,31 +1,5 @@
-import { Header } from './Header';
-import { Hero } from './Hero';
-import { LogoBar } from './LogoBar';
-import { Benefits } from './Benefits';
-import { Comparison } from './Comparison';
-import { DeepDive } from './DeepDive';
-import { Expert } from './Expert';
-import { Trust } from './Trust';
-import { Footer } from './Footer';
-
-function App() {
-  return (
-    <div className="app-wrapper">
-      <Header />
-      
-      <main>
-        <Hero />
-        <LogoBar />
-        <Benefits />
-        <Comparison />
-        <DeepDive />
-        <Expert />
-        <Trust />
-      </main>
-
-      <Footer />
-    </div>
-  );
+// Diese Datei scheint ein Duplikat der Root App.tsx zu sein und wird nicht verwendet.
+// Der Inhalt wurde entfernt, um Build-Fehler zu vermeiden.
+export default function App() {
+  return null;
 }
-
-export default App;
