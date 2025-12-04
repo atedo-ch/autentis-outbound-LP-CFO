@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
       {/* Background Image & Overlay */}
       <div className="hero-bg-wrapper">
         <img 
-          src="generated_image_0.png" 
+          src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
           alt="Professionelles Business-Gespräch in modernem Büro" 
           className="hero-bg-image"
         />
