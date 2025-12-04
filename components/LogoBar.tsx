@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 const logos = [
   {
@@ -30,7 +30,7 @@ const logos = [
 // Duplicate the array to ensure seamless infinite scrolling
 const sliderLogos = [...logos, ...logos];
 
-export const LogoBar: React.FC = () => {
+export const LogoBar: FC = () => {
   return (
     <section id="logos" className="logo-bar-section">
       <div className="container logo-bar-title">

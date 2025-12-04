@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState, FC, ChangeEvent, FormEvent } from 'react';
 import { Button } from './Button';
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
 // KONFIGURATION: Hier Ihre Formspree-ID einfügen
 const FORMSPREE_ID = 'xrbnlgdb'; 
 
-export const ContactForm: React.FC = () => {
+export const ContactForm: FC = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,11 +15,11 @@ export const ContactForm: React.FC = () => {
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.email || !formData.firstName || !formData.lastName) {
       setStatus('error');

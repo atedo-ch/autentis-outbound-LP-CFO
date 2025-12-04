@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { BadgeSwissFranc, ShieldAlert, Zap, TrendingDown } from 'lucide-react';
 import { BenefitProps } from '../types';
 
@@ -25,7 +25,7 @@ const benefits: BenefitProps[] = [
   }
 ];
 
-export const Benefits: React.FC = () => {
+export const Benefits: FC = () => {
   return (
     <section className="benefits-section" id="vorteile">
       <div className="container">

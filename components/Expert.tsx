@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const Expert: React.FC = () => {
+export const Expert: FC = () => {
   return (
     <section id="expert" className="expert-section">
       {/* Background pattern */}

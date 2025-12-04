@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC, MouseEvent } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './Button';
 import { Logo } from './Logo';
@@ -10,7 +10,7 @@ const navItems: NavItem[] = [
   { label: 'Referenzen', href: '#logos' },
 ];
 
-export const Header: React.FC = () => {
+export const Header: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);

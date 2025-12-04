@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 import { Button } from './Button';
 import { TrendingUp, CheckCircle } from 'lucide-react';
 import { ROICalculator } from './ROICalculator';
 
-export const Hero: React.FC = () => {
+export const Hero: FC = () => {
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };

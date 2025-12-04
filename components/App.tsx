@@ -1,5 +1,5 @@
-// Diese Datei scheint ein Duplikat der Root App.tsx zu sein und wird nicht verwendet.
-// Der Inhalt wurde entfernt, um Build-Fehler zu vermeiden.
-export default function App() {
+// Diese Datei wird nicht verwendet und dient nur als Platzhalter,
+// um Konflikte mit dem Build-System zu vermeiden.
+export default function Placeholder() {
   return null;
 }

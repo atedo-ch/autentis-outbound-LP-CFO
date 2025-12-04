@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 import { ContactForm } from './ContactForm';
 import { Logo } from './Logo';
 
-export const Footer: React.FC = () => {
+export const Footer: FC = () => {
   return (
     <footer className="footer-section">
       

@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const DeepDive: React.FC = () => {
+export const DeepDive: FC = () => {
   return (
     <section id="loesungen" className="deep-dive-section">
       <div className="container deep-dive-container">

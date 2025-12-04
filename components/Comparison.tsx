@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 import { XCircle, CheckCircle } from 'lucide-react';
 import { Button } from './Button';
 
-export const Comparison: React.FC = () => {
+export const Comparison: FC = () => {
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC, FormEvent } from 'react';
 import { Button } from './Button';
 
-export const ROICalculator: React.FC = () => {
+export const ROICalculator: FC = () => {
   const [positions, setPositions] = useState(5);
   const [salary, setSalary] = useState(200000);
   const [turnover, setTurnover] = useState(20);
@@ -61,7 +61,7 @@ export const ROICalculator: React.FC = () => {
     });
   }, [positions, salary, turnover]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     alert('Vielen Dank! Sie erhalten in Kürze Ihre detaillierte ROI-Analyse per E-Mail.');
     setEmail('');

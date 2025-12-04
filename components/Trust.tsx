@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { Microscope, Award, Landmark } from 'lucide-react';
 
-export const Trust: React.FC = () => {
+export const Trust: FC = () => {
   return (
     <section className="trust-section">
       <div className="container">
