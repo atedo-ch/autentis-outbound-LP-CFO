@@ -7,7 +7,7 @@ export const DeepDive: FC = () => {
       <div className="container">
         
         <div className="section-header">
-          <h2 className="section-title">Maßgeschneiderte Lösungen</h2>
+          <h2 className="section-title">Massgeschneiderte Lösungen</h2>
           <p className="section-subtitle">
             Ob C-Level Executive oder Volumen-Recruiting – wir haben das passende Instrument.
           </p>
