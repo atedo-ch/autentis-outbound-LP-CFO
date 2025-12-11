@@ -1,56 +1,105 @@
 import { FC } from 'react';
+import { Check } from 'lucide-react';
 
 export const DeepDive: FC = () => {
   return (
     <section id="loesungen" className="deep-dive-section">
-      <div className="container deep-dive-container">
+      <div className="container">
         
-        {/* Solution A: Management Audit */}
-        <div className="solution-row">
-          <div className="order-2 lg-order-1">
-            <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-              alt="Schweizer Führungskräfte bei der Dokumentenanalyse im modernen Meetingraum mit Holzinterieur" 
-              className="solution-img"
-            />
-          </div>
-          <div className="order-1 lg-order-2">
-            <h3 className="solution-label">Lösung A</h3>
-            <h2 className="solution-title">Management Audit: Die "Versicherung" für C-Level Entscheidungen.</h2>
-            <p className="solution-desc">
-              Bei Executive-Besetzungen ist der Schaden einer Fehlentscheidung immens. Unser Management Audit liefert Ihnen eine tiefgreifende Analyse der Führungskompetenzen, strategischen Denkweise und Integrität Ihrer Kandidaten.
-            </p>
-            <ul className="solution-list">
-              <li className="solution-item">Unabhängige Zweitmeinung für den Verwaltungsrat</li>
-              <li className="solution-item">Vergleich mit High-Performance-Benchmarks</li>
-              <li className="solution-item">Klarer Onboarding-Fahrplan zur Risikoreduktion</li>
-            </ul>
-          </div>
+        <div className="section-header">
+          <h2 className="section-title">Maßgeschneiderte Lösungen</h2>
+          <p className="section-subtitle">
+            Ob C-Level Executive oder Volumen-Recruiting – wir haben das passende Instrument.
+          </p>
         </div>
 
-        {/* Solution B: IPE & HPR */}
-        <div className="solution-row">
-          <div className="order-1">
-             <h3 className="solution-label">Lösung B</h3>
-             <h2 className="solution-title">IPE & HPR: Automatisierte Effizienz für Volumen-Recruiting.</h2>
-             <p className="solution-desc">
-               Skalierbare Prozesse erfordern intelligente Tools. Mit IPE (Individual Potential Evaluation) und HPR (High Potential Ranking) automatisieren Sie die Vorauswahl, ohne an Qualität zu verlieren.
-             </p>
-             <ul className="solution-list">
-               <li className="solution-item">Bis zu 40% weniger Interviewzeit durch präzises Pre-Screening</li>
-               <li className="solution-item">Objektives Ranking aller Bewerber nach Eignung</li>
-               <li className="solution-item">Kosteneffizient auch bei hohen Bewerberzahlen</li>
-             </ul>
+        <div className="solutions-grid">
+          
+          {/* Solution A */}
+          <div className="solution-card">
+            <div className="solution-card-header">
+              <span className="solution-label">LÖSUNG A</span>
+              <h3 className="solution-card-title">Management Diagnostik</h3>
+              <p className="solution-card-subtitle">Die "Versicherung" für Führungskräfte Entscheidungen.</p>
+            </div>
+            <div className="solution-card-body">
+              <p className="solution-desc">
+                Bei Besetzungen von Führungspositionen ist der Schaden einer Fehlentscheidung immens. Unsere Management Diagnostik liefert Ihnen eine tiefgreifende Analyse der Führungskompetenzen, strategischen Denkweise und Integrität Ihrer Kandidaten.
+              </p>
+              <ul className="solution-list">
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span>Unabhängige Zweitmeinung für die Entscheidungsträger</span>
+                </li>
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span>Vergleich mit High-Performance-Benchmarks</span>
+                </li>
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span>Klarer Onboarding-Fahrplan zur Risikoreduktion und Entwicklungsempfehlungen</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="order-2">
-            <img 
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-              alt="HR-Prozesse und datenbasierte Vorauswahl am Laptop in modernem Schweizer Büro" 
-              className="solution-img"
-            />
-          </div>
-        </div>
 
+          {/* Solution B */}
+          <div className="solution-card">
+            <div className="solution-card-header">
+              <span className="solution-label">LÖSUNG B</span>
+              <h3 className="solution-card-title">HPR & IPE</h3>
+              <p className="solution-card-subtitle">Automatisierte Effizienz für Volumen-Recruiting.</p>
+            </div>
+            <div className="solution-card-body">
+              <p className="solution-desc">
+                Skalierbare Prozesse erfordern intelligente Tools. Mit IPE (Individual Potential Evaluation) und HPR (High Potential Ranking) automatisieren Sie die Vorauswahl, ohne an Qualität zu verlieren.
+              </p>
+              <ul className="solution-list">
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span>Bis zu 40% weniger Interviewzeit durch präzises Pre-Screening</span>
+                </li>
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span>Objektives Ranking aller Bewerber nach Eignung</span>
+                </li>
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span>Kosteneffizient auch bei hohen Bewerberzahlen</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Solution C */}
+          <div className="solution-card highlight-card">
+            <div className="solution-card-header">
+              <span className="solution-label">LÖSUNG C</span>
+              <h3 className="solution-card-title">IPE & Management Sim.</h3>
+              <p className="solution-card-subtitle">Online-Lösung für schlanke Budgets.</p>
+            </div>
+            <div className="solution-card-body">
+              <p className="solution-desc">
+                Professionelle Auswahlentscheidungen müssen keine Frage des Budgets sein. Kombinieren Sie die Persönlichkeitsanalyse (IPE) mit unseren handlungsorientierten Simulationen (HighLight/UTOPIA).
+              </p>
+              <ul className="solution-list">
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span><strong>Ganzheitliche Kompetenzmessung:</strong> Fundierte Erfassung von Persönlichkeit, Management-Skills und Problemlöseverhalten.</span>
+                </li>
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span><strong>Realitätsnahe Arbeitsproben:</strong> Bewerber beweisen ihre Fähigkeiten in praxisnahen Szenarien.</span>
+                </li>
+                <li className="solution-item">
+                  <Check size={18} className="solution-check" />
+                  <span><strong>Maximale Effizienz:</strong> 100% zeit- und ortsunabhängige Online-Durchführung.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

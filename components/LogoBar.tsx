@@ -10,8 +10,8 @@ const logos = [
     src: "https://bank-avera.ch/application/files/4716/0146/6057/BankAvera_wir_verstehen_uns.svg"
   },
   {
-    name: "Swissgrid",
-    src: "https://upload.wikimedia.org/wikipedia/commons/0/04/Swissgrid-logo.svg"
+    name: "Schweizerische Nationalbank",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/SNB-Logo-positiv-blau.svg/2560px-SNB-Logo-positiv-blau.svg.png"
   },
   {
     name: "Die Mobiliar",
