@@ -13,8 +13,8 @@ export const Hero: FC = () => {
       {/* Background Image & Overlay */}
       <div className="hero-bg-wrapper">
         <img 
-          src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-          alt="Professionelles Business-Gespräch in modernem Büro" 
+          src="https://raw.githubusercontent.com/atedo-ch/autentis-brandassets/main/Gemini_Generated_Image_kg2lnxkg2lnxkg2l.png" 
+          alt="Professionelles Business-Szenario" 
           className="hero-bg-image"
         />
         <div className="hero-overlay"></div>
