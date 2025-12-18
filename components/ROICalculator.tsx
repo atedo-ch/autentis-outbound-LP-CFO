@@ -1,5 +1,4 @@
 import { useState, useMemo, FC } from 'react';
-import { Logo } from './Logo';
 
 export const ROICalculator: FC = () => {
   const [salary, setSalary] = useState(150000);
@@ -36,10 +35,6 @@ export const ROICalculator: FC = () => {
 
   return (
     <div className="calculator-container">
-      <div className="calc-logo-wrapper">
-         <Logo className="calc-logo" withSubtitle={false} />
-      </div>
-
       <h1>Fehlbesetzungs-Kostenrechner</h1>
       <p className="subtitle">Berechnen Sie die wahren Kosten einer Fehlbesetzung in Ihrem Unternehmen</p>
       
